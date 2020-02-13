@@ -16,18 +16,15 @@ class BaseNavigationController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationBar.isTranslucent = false
+        navigationBar.isTranslucent = false
         
-        self.navigationBar.tintColor = .white
-        self.navigationBar.barTintColor = UIColor(displayP3Red: 222/255.0, green: 71/255.0, blue: 114/255.0, alpha: 1)
-        self.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationBar.tintColor = .white
+        navigationBar.barTintColor = UIColor(displayP3Red: 222/255.0, green: 31/255.0, blue: 214/255.0, alpha: 1)
+        navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationItem.title = "Home"
         
 
     }
-    func addNavBarTitle() {
-        navigationItem.title = "Home"
-        
-    }
-    
+
 }
 

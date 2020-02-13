@@ -6,9 +6,34 @@
 //  Copyright © 2020 Luiz Henrique. All rights reserved.
 //
 
-import UIKit
-import RxSwift
+import Foundation
+import Alamofire
 
-class HomeViewModel {
-
+class HomeService {
+    
+    public func requestMarvelList(
+        completion: @escaping (ComicDataWrapper?, CustomError?) -> Void) {
+        Service.shared.request(.comicList,
+                               nil,
+                               nil) { result in
+                                switch result {
+                                case .failure( let error):
+                                    let customError = CustomError(error, type: .serviceError)
+                                    
+                                    completion(nil, customError)
+                                case .success(let data):
+                                    do {
+                                        let issueList = try JSONDecoder().decode(ComicDataWrapper.self, from: data)
+                                        completion(issueList, nil)
+                                    } catch {
+                                        completion(nil, CustomError(with:.parserError))
+                                    }
+                                    
+                                }
+                                
+        }
+        
+    }
+    
+    
 }
