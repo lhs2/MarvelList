@@ -34,6 +34,10 @@
 		C1C24AE823F60A3400A6E8FF /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1C24AE623F60A3400A6E8FF /* HomeTableViewCell.xib */; };
 		C1C24AEF23F6202900A6E8FF /* HomeLoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C24AED23F6202900A6E8FF /* HomeLoadingTableViewCell.swift */; };
 		C1C24AF023F6202900A6E8FF /* HomeLoadingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1C24AEE23F6202900A6E8FF /* HomeLoadingTableViewCell.xib */; };
+		C1C24AF323F6D5CF00A6E8FF /* ComicDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C24AF223F6D5CF00A6E8FF /* ComicDetailView.swift */; };
+		C1C24AF523F6D5D800A6E8FF /* ComicDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C24AF423F6D5D800A6E8FF /* ComicDetailViewModel.swift */; };
+		C1C24AF723F6D5E200A6E8FF /* ComicDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C24AF623F6D5E200A6E8FF /* ComicDetailCoordinator.swift */; };
+		C1C24AF923F6D65000A6E8FF /* ComicDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1C24AF823F6D65000A6E8FF /* ComicDetail.storyboard */; };
 		C1F6E97F23F4A15F00D2BF12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F6E97E23F4A15F00D2BF12 /* AppDelegate.swift */; };
 		C1F6E98323F4A15F00D2BF12 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F6E98223F4A15F00D2BF12 /* ViewController.swift */; };
 		C1F6E98623F4A15F00D2BF12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1F6E98423F4A15F00D2BF12 /* Main.storyboard */; };
@@ -90,6 +94,10 @@
 		C1C24AE623F60A3400A6E8FF /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		C1C24AED23F6202900A6E8FF /* HomeLoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLoadingTableViewCell.swift; sourceTree = "<group>"; };
 		C1C24AEE23F6202900A6E8FF /* HomeLoadingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeLoadingTableViewCell.xib; sourceTree = "<group>"; };
+		C1C24AF223F6D5CF00A6E8FF /* ComicDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDetailView.swift; sourceTree = "<group>"; };
+		C1C24AF423F6D5D800A6E8FF /* ComicDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDetailViewModel.swift; sourceTree = "<group>"; };
+		C1C24AF623F6D5E200A6E8FF /* ComicDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDetailCoordinator.swift; sourceTree = "<group>"; };
+		C1C24AF823F6D65000A6E8FF /* ComicDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ComicDetail.storyboard; sourceTree = "<group>"; };
 		C1F6E97B23F4A15F00D2BF12 /* MarvelList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1F6E97E23F4A15F00D2BF12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1F6E98223F4A15F00D2BF12 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +182,17 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		C1C24AF123F6D5B100A6E8FF /* ComicDetail */ = {
+			isa = PBXGroup;
+			children = (
+				C1C24AF223F6D5CF00A6E8FF /* ComicDetailView.swift */,
+				C1C24AF423F6D5D800A6E8FF /* ComicDetailViewModel.swift */,
+				C1C24AF623F6D5E200A6E8FF /* ComicDetailCoordinator.swift */,
+				C1C24AF823F6D65000A6E8FF /* ComicDetail.storyboard */,
+			);
+			path = ComicDetail;
+			sourceTree = "<group>";
+		};
 		C1F6E97223F4A15F00D2BF12 = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +261,7 @@
 		C1F6E9A223F4A1BE00D2BF12 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				C1C24AF123F6D5B100A6E8FF /* ComicDetail */,
 				C1F6E9AC23F4A4D300D2BF12 /* Home */,
 				C1F6E9A623F4A32500D2BF12 /* AppCoordinator.swift */,
 			);
@@ -358,6 +378,7 @@
 				C1C24AE823F60A3400A6E8FF /* HomeTableViewCell.xib in Resources */,
 				C1C24ADF23F4CB6400A6E8FF /* Home.storyboard in Resources */,
 				C1C24AF023F6202900A6E8FF /* HomeLoadingTableViewCell.xib in Resources */,
+				C1C24AF923F6D65000A6E8FF /* ComicDetail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +399,7 @@
 				C1C24AC323F4C52700A6E8FF /* SeriesSummary.swift in Sources */,
 				C1C24ABB23F4C1E800A6E8FF /* ComicDataContainer.swift in Sources */,
 				C1C24ABD23F4C2C400A6E8FF /* Comic.swift in Sources */,
+				C1C24AF523F6D5D800A6E8FF /* ComicDetailViewModel.swift in Sources */,
 				C1F6E9AB23F4A48800D2BF12 /* AppDelegate+Container.swift in Sources */,
 				C1C24AC723F4C57500A6E8FF /* ComicDate.swift in Sources */,
 				C1F6E9AE23F4A4E000D2BF12 /* HomeView.swift in Sources */,
@@ -393,6 +415,7 @@
 				C157116223F4AAC100470438 /* BaseService.swift in Sources */,
 				C1C24AE723F60A3400A6E8FF /* HomeTableViewCell.swift in Sources */,
 				C1C24ACB23F4C5BC00A6E8FF /* ComicImage.swift in Sources */,
+				C1C24AF323F6D5CF00A6E8FF /* ComicDetailView.swift in Sources */,
 				C1F6E9B023F4A4E900D2BF12 /* HomeViewModel.swift in Sources */,
 				C1C24ADD23F4C7FC00A6E8FF /* CustomError.swift in Sources */,
 				C1C24ACF23F4C66800A6E8FF /* CreatorSummary.swift in Sources */,
@@ -406,6 +429,7 @@
 				C1F6E97F23F4A15F00D2BF12 /* AppDelegate.swift in Sources */,
 				C1C24AC923F4C59D00A6E8FF /* ComicPrice.swift in Sources */,
 				C1C24AB923F4C1AA00A6E8FF /* ComicDataWrapper.swift in Sources */,
+				C1C24AF723F6D5E200A6E8FF /* ComicDetailCoordinator.swift in Sources */,
 				C1C24AD523F4C70A00A6E8FF /* StoryList.swift in Sources */,
 				C1F6E9A923F4A44500D2BF12 /* BaseNavigationController.swift in Sources */,
 				C1C24AD123F4C68800A6E8FF /* CharacterList.swift in Sources */,
@@ -573,6 +597,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QMK6FFKPUV;
 				INFOPLIST_FILE = MarvelList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -591,6 +616,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QMK6FFKPUV;
 				INFOPLIST_FILE = MarvelList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
