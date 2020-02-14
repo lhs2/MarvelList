@@ -16,6 +16,7 @@ public struct CustomError : Error {
         case invalidRequest
         case notFound
         case parserError
+        case imageError
     }
     
     init(_ error: Error, type: CustomErrorType = .notFound) {
@@ -46,6 +47,8 @@ public struct CustomError : Error {
             return "An unknown error occurred. Try again later"
         case .parserError:
             return "An parser error occurred. Try again later"
+        case .imageError:
+            return "An error occurred while requesting the comic image.\n Try again later"
         }
     }
 }

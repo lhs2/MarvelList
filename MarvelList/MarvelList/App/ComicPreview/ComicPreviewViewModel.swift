@@ -10,14 +10,19 @@ import UIKit
 import RxSwift
 
 class ComicPreviewViewModel {
+    let didSelectedRow = PublishSubject<Void>()
     var comicInformation: Comic?
     
     var comicImagePath: String {
         guard let comic = comicInformation else {
-            return ""
+            return String.Empty
         }
         let imagePath = comic.getFirstImageAvailable()
         return imagePath
     }
     
+    
+    func showComicInformation() {
+        didSelectedRow.onNext(Void())
+    }
 }

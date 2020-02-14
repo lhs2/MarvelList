@@ -27,13 +27,35 @@ class ComicPreviewView: UIViewController, Storyboarded {
             let url = URL(string: viewModel.comicImagePath)else {
                 return
         }
+        //Image loading
+        ImagePipeline.shared.loadImage(
+            with: url,
+            progress: nil) {
+                response, error in
+                if error != nil {
+                    let err = CustomError.init(with: .imageError)
+                    self.alert(title: "Error", error: err.description(), buttonTexts: ["OK"])
+                } else {
+                    self.previewImage.image = response?.image
+                    self.previewImage.contentMode = .scaleAspectFit
 
-//        let request = ImageRequest(
-//        url: url,
-//        targetSize: CGSize(width: previewImage.bounds.width, height: previewImage.bounds.height),
-//        contentMode: .aspectFill)
-//
+                }
+                
+        }
         Nuke.loadImage(with: url ,into: previewImage)
+        
+        //Image Tappable
+        previewImage.isUserInteractionEnabled = true
+        
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapAction(tapGestureRecognizer:)))
+         previewImage.addGestureRecognizer(tapRecognizer)
+    }
+    
+    @objc func tapAction(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        guard let _ = tapGestureRecognizer.view as? UIImageView, let viewModel = viewModel else { return }
+        
+        viewModel.showComicInformation()
     }
     
 }
