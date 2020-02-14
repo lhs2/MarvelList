@@ -9,6 +9,7 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import NVActivityIndicatorView
 
 class HomeView: UIViewController, Storyboarded {
     static var storyboard: StoryboardType = .home
@@ -26,11 +27,20 @@ class HomeView: UIViewController, Storyboarded {
     func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        
+        tableView.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeCell")
+        tableView.register(UINib(nibName: "HomeLoadingTableViewCell", bundle: nil), forCellReuseIdentifier: "LoadingCell")
     }
     
     func setupCallBack(){
         guard let viewModel = self.viewModel else { return }
+        
+        viewModel.isLoading.asObservable()
+            .bind{ value in
+                let animating = NVActivityIndicatorPresenter.sharedInstance.isAnimating
+                if(!value && animating) {
+                    NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+                }
+        }.disposed(by: disposeBag)
         
         viewModel.isSuccess.asObservable()
             .bind{ value in
@@ -54,33 +64,56 @@ class HomeView: UIViewController, Storyboarded {
 
 extension HomeView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let viewModel = viewModel, viewModel.rows > 0 {
+        if let viewModel = viewModel, viewModel.rows > 0, section == 0 {
             return viewModel.rows
+        }
+        else if let viewModel = viewModel, viewModel.rows > 0, section == 1 {
+            return 1
         }
         return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "default")
-        
-        guard let viewModel = viewModel,
-            let comic = viewModel.getComicBy(indexPath.row) else {
-                cell.textLabel?.text = "Error in Comic"
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell", for: indexPath) as! HomeTableViewCell
+            
+            guard let viewModel = viewModel, let comic = viewModel.getComicBy(indexPath.row) else {
+                cell.configureCell()
                 return cell
+            }
+            
+            cell.configureCell(with: comic)
+            
+            
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "LoadingCell", for: indexPath) as! HomeLoadingTableViewCell
+            return cell
         }
-        cell.textLabel?.text = comic.title ?? "No title available"
         
-        return cell
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         if let viewModel = viewModel, viewModel.rows > 0 {
+            self.tableView.backgroundView = .none
             self.tableView.separatorStyle = .singleLine
-            return 1
+            return 2
         }
         
         emptyMessage(message: "Requesting comic list. \nPlease wait a moment")
         return 0
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 90
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let viewModel = viewModel else { return }
+        if indexPath.section == 1, let cell = cell as? HomeLoadingTableViewCell {
+            cell.configureCell()
+            viewModel.requestPagination()
+        }
     }
     
     fileprivate func emptyMessage(message:String) {

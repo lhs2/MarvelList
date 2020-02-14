@@ -49,7 +49,7 @@ class Service {
             case .comicList:
                 let timestamp = "\(Date.timestamp)"
                 let hash = Data.MD5(timestamp: timestamp, privateKey: Service.API_KEY_PRIVATE, publicKey: Service.API_KEY_PUBLIC) .map { String(format: "%02hhx", $0) }.joined()
-                return "public/comics?noVariants=true&limit=50&apikey=\(Service.API_KEY_PUBLIC)&ts=\(timestamp)&hash=\(hash)"
+                return "public/comics?noVariants=true&offset=%@&limit=50&apikey=\(Service.API_KEY_PUBLIC)&ts=\(timestamp)&hash=\(hash)"
             }
         }
         

@@ -30,10 +30,17 @@ class HomeViewModel {
         requestList()
     }
     
+    func requestPagination() {
+        if !isLoading.value {
+            requestList()
+        }
+    }
+    
+    
     func requestList() {
         isLoading.value = true
         
-        service.requestMarvelList() {
+        service.get(offset: rows) {
             responseSuccess, responseError in
             if let error = responseError {
                 self.isSuccess.value = false
@@ -60,7 +67,7 @@ class HomeViewModel {
     }
     
     func getComicBy(_ index: Int)->Comic? {
-        if(index > comicList.count) { return nil }
+        if(index > comicList.count-1) { return nil }
         else { return comicList[index] }
     }
 }

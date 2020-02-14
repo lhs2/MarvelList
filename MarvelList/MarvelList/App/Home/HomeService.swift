@@ -11,10 +11,13 @@ import Alamofire
 
 class HomeService {
     
-    public func requestMarvelList(
+    //MARK: - Request Marvel List
+    public func get(offset: Int,
         completion: @escaping (ComicDataWrapper?, CustomError?) -> Void) {
+        let queryOffset = "\(offset)" as CVarArg
+        let queryParameters = [queryOffset]
         Service.shared.request(.comicList,
-                               nil,
+                               queryParameters,
                                nil) { result in
                                 switch result {
                                 case .failure( let error):
