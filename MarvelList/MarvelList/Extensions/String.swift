@@ -12,4 +12,9 @@ extension String {
     static var Empty : String {
         return ""
     }
+    
+    var localized: String {
+        return NSLocalizedString(self, comment: String.Empty)
+    }
+    
 }

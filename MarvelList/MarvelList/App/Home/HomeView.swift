@@ -52,9 +52,9 @@ class HomeView: UIViewController, Storyboarded {
         viewModel.errorMsg.asObservable()
             .bind { errorMessage in
                 if(!errorMessage.isEmpty) {
-                    self.alert(title: "Error", error: errorMessage, buttonTexts: ["OK"])
+                    self.alert(title: "ERROR_TITLE".localized, error: errorMessage, buttonTexts: ["BTN_OK".localized])
                     print(errorMessage)
-                    self.emptyMessage(message: "Error when requesting comic list.")
+                    self.emptyMessage(message: "ERROR_REQUEST_LIST".localized)
                     
                 }
         }.disposed(by: disposeBag)
@@ -100,7 +100,7 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
             return 2
         }
         
-        emptyMessage(message: "Requesting comic list. \nPlease wait a moment")
+        emptyMessage(message: "LBL_REQUEST".localized)
         return 0
     }
     

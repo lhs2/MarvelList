@@ -35,7 +35,6 @@ class HomeCoordinator: BaseCoordinator {
         let viewController = ComicPreviewView.instantiate()
         viewController.viewModel = self.comicPreviewViewModel
         viewController.viewModel?.comicInformation = viewModel.selectedComic
-//        viewController.modalPresentationStyle = 
         self.navigationController.present(viewController, animated: true, completion: nil)
     }
     

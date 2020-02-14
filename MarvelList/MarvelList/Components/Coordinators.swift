@@ -26,7 +26,7 @@ class BaseCoordinator: Coordinator {
     var parentCoordinator: Coordinator?
     
     func start() {
-        fatalError("Start method should be implemented.")
+        fatalError("ERROR_FATAL".localized)
     }
     
     func start(coordinator: Coordinator) {

@@ -34,7 +34,7 @@ class ComicPreviewView: UIViewController, Storyboarded {
                 response, error in
                 if error != nil {
                     let err = CustomError.init(with: .imageError)
-                    self.alert(title: "Error", error: err.description(), buttonTexts: ["OK"])
+                    self.alert(title: "ERROR_TITLE".localized, error: err.description(), buttonTexts: ["BTN_OK".localized])
                 } else {
                     self.previewImage.image = response?.image
                     self.previewImage.contentMode = .scaleAspectFit
