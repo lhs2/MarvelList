@@ -1,0 +1,24 @@
+/* 
+  Localizable.strings
+  MarvelList
+
+  Created by Luiz Henrique de Sousa on 14/02/20.
+  Copyright © 2020 Luiz Henrique. All rights reserved.
+*/
+
+//Mark: - Error Strings
+"ERROR_TITLE" = "Error";
+"ERROR_UNKNOWN" = "Ha occurido un error desconocido. Intenta nuevamente más tarde.";
+"ERROR_CONNECTION" = "Ha occurido un error de conexión. Intenta nuevamente más tarde.";
+"ERROR_INTERNAL" = "Ha ocurrido un error interno. Intenta nuevamente más tarde.";
+"ERROR_PARSE" = "Ha occurido un error de conversión. Intenta nuevamente más tarde.";
+"ERROR_COMIC_IMAGE" = "Se produjo un error al solicitar la imagen. \n Inténtalo de nuevo más tarde.";
+"ERROR_TITLE" = "No hay título disponible para este cómic.";
+"ERROR_REQUEST_LIST" = "Error al solicitar la lista de cómics.";
+"ERROR_FATAL" = "Se debe implementar el método de inicio.";
+
+//Mark: - Buttons Strings
+"BTN_OK" = "OK";
+
+//Mark: - Labels Strings
+"LBL_REQUEST" = "Solicitando lista de cómics. \nPor favor espera un momento...";
