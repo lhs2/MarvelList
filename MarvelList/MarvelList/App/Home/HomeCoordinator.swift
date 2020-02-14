@@ -12,7 +12,7 @@ import RxSwift
 class HomeCoordinator: BaseCoordinator {
     
     private let viewModel: HomeViewModel
-    private let comicPreviewViewModel: ComicPreviewViewModel
+    private var comicPreviewViewModel: ComicPreviewViewModel
     private let disposebag = DisposeBag()
     
     init(viewModel: HomeViewModel, comicPreviewViewModel: ComicPreviewViewModel) {
@@ -32,10 +32,15 @@ class HomeCoordinator: BaseCoordinator {
     
     
     private func didSelectComic() {
-        let viewController = ComicPreviewView.instantiate()
-        viewController.viewModel = self.comicPreviewViewModel
-        viewController.viewModel?.comicInformation = viewModel.selectedComic
-        self.navigationController.present(viewController, animated: true, completion: nil)
+        let coordinator: ComicPreviewCoordinator = AppDelegate.container.resolve(ComicPreviewCoordinator.self)!
+        coordinator.navigationController = self.navigationController
+        
+        comicPreviewViewModel.comicInformation = viewModel.selectedComic
+        coordinator.prepare(for: comicPreviewViewModel)
+        
+        start(coordinator: coordinator)
+        
+
     }
     
     private func setUpBindings() {

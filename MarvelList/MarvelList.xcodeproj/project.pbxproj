@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C157116223F4AAC100470438 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C157116123F4AAC100470438 /* BaseService.swift */; };
+		C163362A23F7541500A014EE /* NavigationFlow.png in Resources */ = {isa = PBXBuildFile; fileRef = C163362923F7541500A014EE /* NavigationFlow.png */; };
 		C17A524A23F73860005C0685 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C17A524C23F73860005C0685 /* Localizable.strings */; };
 		C17A525223F73CD6005C0685 /* i18n.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17A525123F73CD6005C0685 /* i18n.swift */; };
 		C1804CA623F6E1D000528551 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1804CA523F6E1D000528551 /* String.swift */; };
@@ -69,6 +70,7 @@
 
 /* Begin PBXFileReference section */
 		C157116123F4AAC100470438 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		C163362923F7541500A014EE /* NavigationFlow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavigationFlow.png; sourceTree = "<group>"; };
 		C17A524B23F73860005C0685 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C17A524D23F7386F005C0685 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C17A525123F73CD6005C0685 /* i18n.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = i18n.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 		C1F6E9A023F4A1A200D2BF12 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				C163362923F7541500A014EE /* NavigationFlow.png */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				C1C24AE823F60A3400A6E8FF /* HomeTableViewCell.xib in Resources */,
 				C1C24ADF23F4CB6400A6E8FF /* Home.storyboard in Resources */,
 				C17A524A23F73860005C0685 /* Localizable.strings in Resources */,
+				C163362A23F7541500A014EE /* NavigationFlow.png in Resources */,
 				C1C24AF023F6202900A6E8FF /* HomeLoadingTableViewCell.xib in Resources */,
 				C1C24AF923F6D65000A6E8FF /* ComicPreview.storyboard in Resources */,
 			);
