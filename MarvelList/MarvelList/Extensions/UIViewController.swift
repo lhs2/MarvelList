@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 extension UIViewController {
+    
     func alert(title:String = "ERROR_TITLE".localized, error:String, buttonTexts: [String], completion: ((Int) -> Void)? = nil) {
         let alert = UIAlertController(title: title, message: error, preferredStyle: .alert)
         for (_, text) in buttonTexts.enumerated() {
@@ -25,6 +26,7 @@ extension UIViewController {
     @objc private func handleTap(sender: UITapGestureRecognizer? = nil) {
         sender?.view?.endEditing(true)
     }
+    
 }
 
 enum ViewControllerUtils {
@@ -49,4 +51,5 @@ enum ViewControllerUtils {
             })
         }
     }
+    
 }

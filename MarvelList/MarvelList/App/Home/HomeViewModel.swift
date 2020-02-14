@@ -70,8 +70,13 @@ class HomeViewModel {
         
     }
     
-    func getComicBy(_ index: Int)->Comic? {
-        if(index > comicList.count-1) { return nil }
-        else { return comicList[index] }
+    func getComicBy(_ index: Int) -> Comic? {
+        if index > comicList.count-1 {
+            return nil
+        }
+        else {
+            return comicList[index]
+        }
     }
+    
 }

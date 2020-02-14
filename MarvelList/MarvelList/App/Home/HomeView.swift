@@ -31,27 +31,27 @@ class HomeView: UIViewController, Storyboarded {
         tableView.register(UINib(nibName: "HomeLoadingTableViewCell", bundle: nil), forCellReuseIdentifier: "LoadingCell")
     }
     
-    func setupCallBack(){
+    func setupCallBack() {
         guard let viewModel = self.viewModel else { return }
         
         viewModel.isLoading.asObservable()
-            .bind{ value in
+            .bind { value in
                 let animating = NVActivityIndicatorPresenter.sharedInstance.isAnimating
-                if(!value && animating) {
+                if !value && animating {
                     NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
                 }
         }.disposed(by: disposeBag)
         
         viewModel.isSuccess.asObservable()
-            .bind{ value in
-                if(value) {
+            .bind { value in
+                if value {
                     self.tableView.reloadData()
                 }
         }.disposed(by: disposeBag)
         
         viewModel.errorMsg.asObservable()
             .bind { errorMessage in
-                if(!errorMessage.isEmpty) {
+                if !errorMessage.isEmpty {
                     self.alert(title: "ERROR_TITLE".localized, error: errorMessage, buttonTexts: ["BTN_OK".localized])
                     print(errorMessage)
                     self.emptyMessage(message: "ERROR_REQUEST_LIST".localized)
@@ -60,9 +60,11 @@ class HomeView: UIViewController, Storyboarded {
         }.disposed(by: disposeBag)
         
     }
+    
 }
 
 extension HomeView: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let viewModel = viewModel, viewModel.rows > 0, section == 0 {
             return viewModel.rows
@@ -122,16 +124,18 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
     }
     
     fileprivate func emptyMessage(message:String) {
-        let rect = CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: self.view.bounds.size.width, height: self.view.bounds.size.height))
+        let rect = CGRect(origin: CGPoint(x: 0, y :0), size: CGSize(width: self.view.bounds.size.width, height: self.view.bounds.size.height))
         let messageLabel = UILabel(frame: rect)
         messageLabel.text = message
         messageLabel.textColor = .black
-        messageLabel.numberOfLines = 0;
-        messageLabel.textAlignment = .center;
+        messageLabel.numberOfLines = 0
+        messageLabel.textAlignment = .center
         messageLabel.font = UIFont(name: "TrebuchetMS", size: 15)
         messageLabel.sizeToFit()
         
-        self.tableView.backgroundView = messageLabel;
+        self.tableView.backgroundView = messageLabel
         self.tableView.separatorStyle = .none
+        
     }
+    
 }

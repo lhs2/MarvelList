@@ -11,24 +11,20 @@ import Swinject
 import SwinjectAutoregistration
 
 extension AppDelegate {
+    
     internal func setupContainer() {
         setupCoordinators()
-        setupServices()
         setupViewModels()
     }
     
-    private func setupCoordinators(){
+    private func setupCoordinators() {
         AppDelegate.container.autoregister(AppCoordinator.self, initializer: AppCoordinator.init)
         AppDelegate.container.autoregister(HomeCoordinator.self, initializer:  HomeCoordinator.init)
         AppDelegate.container.autoregister(ComicPreviewCoordinator.self, initializer:  ComicPreviewCoordinator.init)
 
     }
-
-    private func setupServices(){
-      
-    }
     
-    private func setupViewModels(){
+    private func setupViewModels() {
         AppDelegate.container.autoregister(HomeViewModel.self, initializer: HomeViewModel.init)
         AppDelegate.container.autoregister(ComicPreviewViewModel.self, initializer: ComicPreviewViewModel.init)
     }

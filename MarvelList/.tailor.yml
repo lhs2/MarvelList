@@ -1,0 +1,15 @@
+except:
+    - forced-type-cast
+    - angle-bracket-whitespace
+    - colon-whitespace
+    - parenthesis-whitespace
+    - lower-camel-case
+    - comment-whitespace
+    - trailing-whitespace
+
+include:
+    - MarvelList            # Inspect all Swift files under "Source/"
+
+exclude:
+    - '**Tests.swift'   # Ignore Swift files that end in "Tests"
+    - Pods       # Ignore Swift files under "Source/Pods/"

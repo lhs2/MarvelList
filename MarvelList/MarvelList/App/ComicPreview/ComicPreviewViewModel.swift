@@ -25,4 +25,5 @@ class ComicPreviewViewModel {
     func showComicInformation() {
         didSelectedRow.onNext(Void())
     }
+    
 }
