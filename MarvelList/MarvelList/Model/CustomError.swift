@@ -16,6 +16,7 @@ public struct CustomError : Error {
         case invalidRequest
         case notFound
         case parserError
+        case imageError
     }
     
     init(_ error: Error, type: CustomErrorType = .notFound) {
@@ -24,7 +25,7 @@ public struct CustomError : Error {
     }
     
     init(with type: CustomErrorType = .notFound) {
-        self.localizedDescription = ""
+        self.localizedDescription = String.Empty
         self.errorType = type
     }
     //Static versions
@@ -37,15 +38,17 @@ public struct CustomError : Error {
         case .serviceError:
             return self.localizedDescription
         case .unknownError:
-            return "An unknown error occurred. Try again later."
+            return "ERROR_UNKNOWN".localized
         case .connectionError:
-            return "An connection error occurred. Try again later."
+            return "ERROR_CONNECTION".localized
         case .invalidRequest:
-            return "An internal error occurred. Try again later."
+            return "ERROR_INTERNAL".localized
         case .notFound:
-            return "An unknown error occurred. Try again later"
+            return "ERROR_UNKNOWN".localized
         case .parserError:
-            return "An parser error occurred. Try again later"
+            return "ERROR_PARSE".localized
+        case .imageError:
+            return "ERROR_COMIC_IMAGE".localized
         }
     }
 }

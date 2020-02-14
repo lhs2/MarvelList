@@ -23,7 +23,7 @@ class HomeViewModel {
     
     let isSuccess : Variable<Bool> = Variable(false)
     let isLoading : Variable<Bool> = Variable(false)
-    let errorMsg  : Variable<String> = Variable("")
+    let errorMsg  : Variable<String> = Variable(String.Empty)
     
     init() {
         service = HomeService()
@@ -36,6 +36,10 @@ class HomeViewModel {
         }
     }
     
+    func setSelectedItem(by index: Int) {
+        selectedComic = comicList[index]
+        didSelectedRow.onNext(Void())
+    }
     
     func requestList() {
         isLoading.value = true

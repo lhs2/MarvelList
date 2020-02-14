@@ -20,6 +20,7 @@ extension AppDelegate {
     private func setupCoordinators(){
         AppDelegate.container.autoregister(AppCoordinator.self, initializer: AppCoordinator.init)
         AppDelegate.container.autoregister(HomeCoordinator.self, initializer:  HomeCoordinator.init)
+        AppDelegate.container.autoregister(ComicPreviewCoordinator.self, initializer:  ComicPreviewCoordinator.init)
 
     }
 
@@ -29,6 +30,7 @@ extension AppDelegate {
     
     private func setupViewModels(){
         AppDelegate.container.autoregister(HomeViewModel.self, initializer: HomeViewModel.init)
+        AppDelegate.container.autoregister(ComicPreviewViewModel.self, initializer: ComicPreviewViewModel.init)
     }
 
 }

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension UIViewController {
-    func alert(title:String, error:String, buttonTexts: [String], completion: ((Int) -> Void)? = nil) {
+    func alert(title:String = "ERROR_TITLE".localized, error:String, buttonTexts: [String], completion: ((Int) -> Void)? = nil) {
         let alert = UIAlertController(title: title, message: error, preferredStyle: .alert)
         for (_, text) in buttonTexts.enumerated() {
             alert.addAction(UIAlertAction(title: text, style: .default, handler: nil))

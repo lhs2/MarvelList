@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.9.1)
+  - Nuke (7.6.3)
   - NVActivityIndicatorView (4.8.0):
     - NVActivityIndicatorView/Presenter (= 4.8.0)
   - NVActivityIndicatorView/Presenter (4.8.0)
@@ -15,6 +16,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - Nuke (~> 7.0)
   - NVActivityIndicatorView
   - RxCocoa (~> 5)
   - RxSwift (~> 5)
@@ -24,6 +26,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Nuke
     - NVActivityIndicatorView
     - RxCocoa
     - RxRelay
@@ -33,6 +36,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  Nuke: 44130e95e09463f8773ae4b96b90de1eba6b3350
   NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
   RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
   RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
@@ -40,6 +44,6 @@ SPEC CHECKSUMS:
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
   SwinjectAutoregistration: 330f5012642a8b5c89a8a4adb0c5e52df07382c0
 
-PODFILE CHECKSUM: ddde11f5e9303c41e59e829db19642e63aa2184f
+PODFILE CHECKSUM: 53dd9ce167fdee11296f8b331c00536e66216356
 
 COCOAPODS: 1.8.4

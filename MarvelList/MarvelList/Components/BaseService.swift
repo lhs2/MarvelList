@@ -19,7 +19,7 @@ class Service {
     }
     
     typealias Handler = (Result<Data, Error>) -> Void
-
+    
     
     static let shared: Service = Service()
     
@@ -32,7 +32,7 @@ class Service {
     static let API_KEY_PRIVATE = "a583bb4154494bc3984ff976ba777a6a41c64b7f"
     private let manager: Alamofire.SessionManager!
     
-
+    
     enum Endpoint: String {
         case comicList = "Get Comic List"
         
@@ -40,7 +40,7 @@ class Service {
         internal var method: HTTPMethod {
             switch self {
             case .comicList      : return .get
-            
+                
             }
         }
         
@@ -57,45 +57,43 @@ class Service {
         fileprivate var headers: HTTPHeaders {
             switch self {
             case .comicList:
-                
-                
                 return [
                     "Accept": "application/json"
                 ]
-           
+                
             }
         }
         
         
     }
     
-        func request(_ endpoint        : Endpoint,
-                     _ pathParamenters : [CVarArg]?,
-                     _ parameters      : [String:Any]?,
-                     handler: @escaping Handler) {
+    func request(_ endpoint        : Endpoint,
+                 _ pathParamenters : [CVarArg]?,
+                 _ parameters      : [String:Any]?,
+                 handler: @escaping Handler) {
         
-            var requestURL = Service.BASE_URL + endpoint.URL
+        var requestURL = Service.BASE_URL + endpoint.URL
         
         if pathParamenters != nil && (pathParamenters?.count)! > 0 {
             requestURL = String.init(format: requestURL, arguments: pathParamenters!)
         }
         
         let encoding: ParameterEncoding = JSONEncoding.default
-            manager.request(requestURL, method: endpoint.method, parameters: parameters, encoding: encoding, headers: endpoint.headers)
-                .responseJSON(completionHandler: { response in
-                    switch response.result {
-                    case .success(_):
-                        if let data = response.data {
-                           handler(.success(data))
-                        }
-                        
-                    case .failure(let error):
-                        handler(.failure(error))
-
+        manager.request(requestURL, method: endpoint.method, parameters: parameters, encoding: encoding, headers: endpoint.headers)
+            .responseJSON(completionHandler: { response in
+                switch response.result {
+                case .success(_):
+                    if let data = response.data {
+                        handler(.success(data))
                     }
-                })
-                
-        }
+                    
+                case .failure(let error):
+                    handler(.failure(error))
+                    
+                }
+            })
+        
+    }
     
     
 }
