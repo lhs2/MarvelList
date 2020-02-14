@@ -44,7 +44,7 @@ struct Comic: Codable {
         guard let thumbnail = self.thumbnail,
             let path = thumbnail.path,
             let fileType = thumbnail.`extension` else { return String.Empty }
-        return "\(path)\(fileType)"
+        return "\(path).\(fileType)"
     }
     
     func getFirstImageAvailable()->String {
@@ -54,7 +54,7 @@ struct Comic: Codable {
             let path = firstImage.path,
             let fileType = firstImage.extension
             else { return self.getThumbnailPath() }
-        return "\(path)\(fileType)"
+        return "\(path).\(fileType)"
     }
     
 }

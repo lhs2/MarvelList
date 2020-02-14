@@ -9,6 +9,7 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import Nuke
 import NVActivityIndicatorView
 
 class ComicPreviewView: UIViewController, Storyboarded {
@@ -17,5 +18,22 @@ class ComicPreviewView: UIViewController, Storyboarded {
     var viewModel : ComicPreviewViewModel?
     @IBOutlet weak var previewImage: UIImageView!
     
+    override func viewDidLoad() {
+        setupView()
+    }
+    
+    private func setupView() {
+        guard let viewModel = viewModel,
+            let url = URL(string: viewModel.comicImagePath)else {
+                return
+        }
+
+//        let request = ImageRequest(
+//        url: url,
+//        targetSize: CGSize(width: previewImage.bounds.width, height: previewImage.bounds.height),
+//        contentMode: .aspectFill)
+//
+        Nuke.loadImage(with: url ,into: previewImage)
+    }
     
 }

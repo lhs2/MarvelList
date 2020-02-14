@@ -12,7 +12,7 @@ import RxSwift
 class ComicPreviewViewModel {
     var comicInformation: Comic?
     
-    var comicImage: String {
+    var comicImagePath: String {
         guard let comic = comicInformation else {
             return ""
         }
