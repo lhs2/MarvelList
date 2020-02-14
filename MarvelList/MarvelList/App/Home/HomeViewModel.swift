@@ -36,6 +36,10 @@ class HomeViewModel {
         }
     }
     
+    func setSelectedItem(by index: Int) {
+        selectedComic = comicList[index]
+        didSelectedRow.onNext(Void())
+    }
     
     func requestList() {
         isLoading.value = true

@@ -40,4 +40,21 @@ struct Comic: Codable {
     var stories: StoryList?
     var events: EventList?
     
+    func getThumbnailPath()->String {
+        guard let thumbnail = self.thumbnail,
+            let path = thumbnail.path,
+            let fileType = thumbnail.`extension` else { return String.Empty }
+        return "\(path)\(fileType)"
+    }
+    
+    func getFirstImageAvailable()->String {
+        
+        guard let imageList = images,  imageList.count > 0,
+            let firstImage = imageList.first,
+            let path = firstImage.path,
+            let fileType = firstImage.extension
+            else { return self.getThumbnailPath() }
+        return "\(path)\(fileType)"
+    }
+    
 }

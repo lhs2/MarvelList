@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C157116223F4AAC100470438 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C157116123F4AAC100470438 /* BaseService.swift */; };
+		C1804CA623F6E1D000528551 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1804CA523F6E1D000528551 /* String.swift */; };
 		C1C24AB923F4C1AA00A6E8FF /* ComicDataWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C24AB823F4C1AA00A6E8FF /* ComicDataWrapper.swift */; };
 		C1C24ABB23F4C1E800A6E8FF /* ComicDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C24ABA23F4C1E800A6E8FF /* ComicDataContainer.swift */; };
 		C1C24ABD23F4C2C400A6E8FF /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C24ABC23F4C2C400A6E8FF /* Comic.swift */; };
@@ -68,6 +69,7 @@
 
 /* Begin PBXFileReference section */
 		C157116123F4AAC100470438 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		C1804CA523F6E1D000528551 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		C1C24AB823F4C1AA00A6E8FF /* ComicDataWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDataWrapper.swift; sourceTree = "<group>"; };
 		C1C24ABA23F4C1E800A6E8FF /* ComicDataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDataContainer.swift; sourceTree = "<group>"; };
 		C1C24ABC23F4C2C400A6E8FF /* Comic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comic.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				C1F6E9B723F4A54B00D2BF12 /* UIViewController.swift */,
 				C1C24AE023F4D24300A6E8FF /* Date.swift */,
 				C1C24AE223F4D32700A6E8FF /* Data.swift */,
+				C1804CA523F6E1D000528551 /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				C1C24AF323F6D5CF00A6E8FF /* ComicPreviewView.swift in Sources */,
 				C1F6E9B023F4A4E900D2BF12 /* HomeViewModel.swift in Sources */,
 				C1C24ADD23F4C7FC00A6E8FF /* CustomError.swift in Sources */,
+				C1804CA623F6E1D000528551 /* String.swift in Sources */,
 				C1C24ACF23F4C66800A6E8FF /* CreatorSummary.swift in Sources */,
 				C1C24AE123F4D24300A6E8FF /* Date.swift in Sources */,
 				C1C24AD923F4C76600A6E8FF /* EventList.swift in Sources */,

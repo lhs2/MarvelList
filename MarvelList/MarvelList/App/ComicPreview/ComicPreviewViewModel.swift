@@ -10,5 +10,14 @@ import UIKit
 import RxSwift
 
 class ComicPreviewViewModel {
-
+    var comicInformation: Comic?
+    
+    var comicImage: String {
+        guard let comic = comicInformation else {
+            return ""
+        }
+        let imagePath = comic.getFirstImageAvailable()
+        return imagePath
+    }
+    
 }

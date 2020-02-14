@@ -116,6 +116,11 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let viewModel = viewModel, indexPath.section == 0 else { return }
+        viewModel.setSelectedItem(by: indexPath.row)
+    }
+    
     fileprivate func emptyMessage(message:String) {
         let rect = CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: self.view.bounds.size.width, height: self.view.bounds.size.height))
         let messageLabel = UILabel(frame: rect)

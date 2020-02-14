@@ -15,4 +15,7 @@ class ComicPreviewView: UIViewController, Storyboarded {
     static var storyboard: StoryboardType = .comicPreview
     
     var viewModel : ComicPreviewViewModel?
+    @IBOutlet weak var previewImage: UIImageView!
+    
+    
 }
