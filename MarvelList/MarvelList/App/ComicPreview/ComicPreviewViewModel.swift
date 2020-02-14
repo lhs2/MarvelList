@@ -1,5 +1,5 @@
 //
-//  ComicDetailViewModel.swift
+//  ComicPreviewViewModel.swift
 //  MarvelList
 //
 //  Created by Luiz Henrique de Sousa on 14/02/20.
@@ -9,6 +9,6 @@
 import UIKit
 import RxSwift
 
-class ComicDetailViewModel {
+class ComicPreviewViewModel {
 
 }

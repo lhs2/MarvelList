@@ -1,5 +1,5 @@
 //
-//  ComicDetailCoordinator.swift
+//  ComicPreviewCoordinator.swift
 //  MarvelList
 //
 //  Created by Luiz Henrique de Sousa on 14/02/20.
@@ -9,17 +9,17 @@
 import UIKit
 import RxSwift
 
-class ComicDetailCoordinator: BaseCoordinator {
+class ComicPreviewCoordinator: BaseCoordinator {
     
-    private let viewModel: ComicDetailViewModel
+    private let viewModel: ComicPreviewViewModel
     private let disposebag = DisposeBag()
     
-    init(viewModel: ComicDetailViewModel) {
+    init(viewModel: ComicPreviewViewModel) {
         self.viewModel = viewModel
     }
     
     override func start() {
-        let viewController = ComicDetailView.instantiate()
+        let viewController = ComicPreviewView.instantiate()
         viewController.viewModel = viewModel
         
         self.navigationController.isNavigationBarHidden = false

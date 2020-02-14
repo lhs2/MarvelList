@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Comic Detail View-->
+        <!--Comic Preview View-->
         <scene sceneID="Lll-rp-Otu">
             <objects>
-                <viewController storyboardIdentifier="ComicDetailView" id="YcN-9z-e5W" customClass="ComicDetailView" customModule="MarvelList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ComicPreviewView" id="YcN-9z-e5W" customClass="ComicPreviewView" customModule="MarvelList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l3w-Xc-NJ6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -12,6 +12,7 @@ target 'MarvelList' do
 	pod 'Swinject'
 	pod 'SwinjectAutoregistration'
 	pod 'NVActivityIndicatorView'
+	pod 'Nuke', '~> 7.0'
 
   target 'MarvelListTests' do
     inherit! :search_paths

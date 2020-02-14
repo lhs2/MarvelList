@@ -1,5 +1,5 @@
 //
-//  ComicDetailView.swift
+//  ComicPreviewView.swift
 //  MarvelList
 //
 //  Created by Luiz Henrique de Sousa on 14/02/20.
@@ -11,8 +11,8 @@ import RxCocoa
 import RxSwift
 import NVActivityIndicatorView
 
-class ComicDetailView: UIViewController, Storyboarded {
-    static var storyboard: StoryboardType = .comicDetail
+class ComicPreviewView: UIViewController, Storyboarded {
+    static var storyboard: StoryboardType = .comicPreview
     
-    var viewModel : ComicDetailViewModel?
+    var viewModel : ComicPreviewViewModel?
 }
