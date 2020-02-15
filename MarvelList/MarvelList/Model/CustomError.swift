@@ -33,7 +33,7 @@ public struct CustomError : Error {
     var localizedDescription: String
     var errorType: CustomErrorType = .notFound
     
-    func description()->String {
+    func description() -> String {
         switch self.errorType {
         case .serviceError:
             return self.localizedDescription
@@ -51,5 +51,5 @@ public struct CustomError : Error {
             return "ERROR_COMIC_IMAGE".localized
         }
     }
+    
 }
-

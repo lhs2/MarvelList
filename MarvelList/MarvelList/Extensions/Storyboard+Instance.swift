@@ -15,6 +15,7 @@ protocol Storyboarded {
 }
 
 extension Storyboarded {
+    
     static func instantiate() -> Self {
         let identifier = String(describing: self)
         let uiStoryboard = UIStoryboard(name: storyboard.rawValue, bundle: nil)
@@ -22,6 +23,7 @@ extension Storyboarded {
 
         return viewController
     }
+    
 }
 
 enum StoryboardType: String {
@@ -29,4 +31,3 @@ enum StoryboardType: String {
     case comicPreview = "ComicPreview"
     case comicDetail = "ComicDetail"
 }
-

@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (4.9.1)
+  - Alamofire (5.0.0)
   - Nuke (7.6.3)
   - NVActivityIndicatorView (4.8.0):
     - NVActivityIndicatorView/Presenter (= 4.8.0)
@@ -35,7 +35,7 @@ SPEC REPOS:
     - SwinjectAutoregistration
 
 SPEC CHECKSUMS:
-  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  Alamofire: 58ff2bfb8daaacaa233d5c36e37b10a5248f59b1
   Nuke: 44130e95e09463f8773ae4b96b90de1eba6b3350
   NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
   RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c

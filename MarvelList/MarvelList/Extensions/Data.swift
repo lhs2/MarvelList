@@ -12,6 +12,7 @@ import func CommonCrypto.CC_MD5
 import typealias CommonCrypto.CC_LONG
 
 extension Data {
+    
     static func MD5(timestamp: String, privateKey: String, publicKey: String) -> Data {
         let string = "\(timestamp)\(privateKey)\(publicKey)"
         let length = Int(CC_MD5_DIGEST_LENGTH)

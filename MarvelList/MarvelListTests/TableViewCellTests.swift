@@ -1,15 +1,17 @@
 //
-//  MarvelListTests.swift
+//  TableViewCellTests.swift
 //  MarvelListTests
 //
-//  Created by Luiz Henrique de Sousa on 12/02/20.
+//  Created by Luiz Henrique de Sousa on 15/02/20.
 //  Copyright © 2020 Luiz Henrique. All rights reserved.
 //
 
 import XCTest
 @testable import MarvelList
 
-class MarvelListTests: XCTestCase {
+class TableViewCellTests: XCTestCase {
+    
+    var tableView: UITableView = UITableView()
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -19,7 +21,8 @@ class MarvelListTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
+    func testHomeTableViewCell() {
+        tableView.regist
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
