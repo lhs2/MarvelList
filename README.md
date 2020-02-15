@@ -23,5 +23,6 @@ Since this application did not require a login, the application automatic redire
 Each feature coordinator is responsible for instantiating the respective storyboard and verify async when the navigation to another storyboard is required.
 For the current scenario, the "Home Coordinator" will know reactively when the user pressed a cell in the table view and will request for the "Comic Preview Coordinator" to present modally your view with the selected information.
 
+Current code coverage: 67%
 
 Any questions you can contact me in: lhs2@cin.ufpe.br
