@@ -55,7 +55,7 @@ class HomeViewModel {
                 let marvelResponseData = marvelResponse.data,
                 let comicResponseList = marvelResponseData.results {
                 // persist info
-                self.comicList.append(contentsOf: comicResponseList)
+                self.setComicList(with: comicResponseList)
                 self.isSuccess.value = true
                 self.isLoading.value = false
                 
@@ -68,6 +68,10 @@ class HomeViewModel {
             }
         }
         
+    }
+    
+    func setComicList(with comicResponseList: [Comic]) {
+        self.comicList.append(contentsOf: comicResponseList)
     }
     
     func getComicBy(_ index: Int) -> Comic? {

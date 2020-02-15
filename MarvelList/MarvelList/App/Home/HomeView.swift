@@ -27,6 +27,7 @@ class HomeView: UIViewController, Storyboarded {
     func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.accessibilityIdentifier = "tableViewIdentifier"
         tableView.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeCell")
         tableView.register(UINib(nibName: "HomeLoadingTableViewCell", bundle: nil), forCellReuseIdentifier: "LoadingCell")
     }
@@ -78,7 +79,7 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell", for: indexPath) as! HomeTableViewCell
-            
+            cell.accessibilityIdentifier = "homeCell\(indexPath.row)"
             guard let viewModel = viewModel, let comic = viewModel.getComicBy(indexPath.row) else {
                 cell.configureCell()
                 return cell

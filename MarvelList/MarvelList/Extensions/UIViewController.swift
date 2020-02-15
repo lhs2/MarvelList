@@ -18,15 +18,7 @@ extension UIViewController {
         }
         self.present(alert, animated: true, completion: nil)
     }
-    
-    func configureDismissKeyboard() {
-        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap(sender:))))
-    }
-    
-    @objc private func handleTap(sender: UITapGestureRecognizer? = nil) {
-        sender?.view?.endEditing(true)
-    }
-    
+
 }
 
 enum ViewControllerUtils {

@@ -24,13 +24,13 @@ class Service {
     static let shared: Service = Service()
     
     private init() {
-        manager = Alamofire.SessionManager()
+        manager = Alamofire.Session()
     }
     
     static let baseURL = "https://gateway.marvel.com/v1/"
     static let apiKeyPublic = "e65e18d826993d6c5f0bfecd1dbb171f"
     static let apiKeyPrivate = "a583bb4154494bc3984ff976ba777a6a41c64b7f"
-    private let manager: Alamofire.SessionManager!
+    private let manager: Alamofire.Session!
     
     
     enum Endpoint: String {
