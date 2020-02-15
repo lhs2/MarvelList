@@ -42,7 +42,7 @@ class ComicPreviewView: UIViewController, Storyboarded {
                 }
                 
         }
-        Nuke.loadImage(with: url ,into: previewImage)
+        Nuke.loadImage(with: url, into: previewImage)
         
         //Image Tappable
         previewImage.isUserInteractionEnabled = true
@@ -51,8 +51,7 @@ class ComicPreviewView: UIViewController, Storyboarded {
          previewImage.addGestureRecognizer(tapRecognizer)
     }
     
-    @objc func tapAction(tapGestureRecognizer: UITapGestureRecognizer)
-    {
+    @objc func tapAction(tapGestureRecognizer: UITapGestureRecognizer) {
         guard let _ = tapGestureRecognizer.view as? UIImageView, let viewModel = viewModel else { return }
         
         viewModel.showComicInformation()

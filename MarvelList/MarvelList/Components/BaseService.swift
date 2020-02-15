@@ -24,13 +24,13 @@ class Service {
     static let shared: Service = Service()
     
     private init() {
-        manager = Alamofire.SessionManager()
+        manager = Alamofire.Session()
     }
     
-    static let BASE_URL = "https://gateway.marvel.com/v1/"
-    static let API_KEY_PUBLIC = "e65e18d826993d6c5f0bfecd1dbb171f"
-    static let API_KEY_PRIVATE = "a583bb4154494bc3984ff976ba777a6a41c64b7f"
-    private let manager: Alamofire.SessionManager!
+    static let baseURL = "https://gateway.marvel.com/v1/"
+    static let apiKeyPublic = "e65e18d826993d6c5f0bfecd1dbb171f"
+    static let apiKeyPrivate = "a583bb4154494bc3984ff976ba777a6a41c64b7f"
+    private let manager: Alamofire.Session!
     
     
     enum Endpoint: String {
@@ -48,8 +48,8 @@ class Service {
             switch self {
             case .comicList:
                 let timestamp = "\(Date.timestamp)"
-                let hash = Data.MD5(timestamp: timestamp, privateKey: Service.API_KEY_PRIVATE, publicKey: Service.API_KEY_PUBLIC) .map { String(format: "%02hhx", $0) }.joined()
-                return "public/comics?noVariants=true&offset=%@&limit=50&apikey=\(Service.API_KEY_PUBLIC)&ts=\(timestamp)&hash=\(hash)"
+                let hash = Data.MD5(timestamp: timestamp, privateKey: Service.apiKeyPrivate, publicKey: Service.apiKeyPublic) .map { String(format: "%02hhx", $0) }.joined()
+                return "public/comics?noVariants=true&offset=%@&limit=50&apikey=\(Service.apiKeyPublic)&ts=\(timestamp)&hash=\(hash)"
             }
         }
         
@@ -72,7 +72,7 @@ class Service {
                  _ parameters      : [String:Any]?,
                  handler: @escaping Handler) {
         
-        var requestURL = Service.BASE_URL + endpoint.URL
+        var requestURL = Service.baseURL + endpoint.URL
         
         if pathParamenters != nil && (pathParamenters?.count)! > 0 {
             requestURL = String.init(format: requestURL, arguments: pathParamenters!)

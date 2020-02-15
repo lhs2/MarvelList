@@ -12,7 +12,6 @@ class AppCoordinator: BaseCoordinator {
 
     private var window = UIWindow(frame: UIScreen.main.bounds)
     
-    
     override func start() {
         self.window.makeKeyAndVisible()
         self.showHome()
@@ -31,6 +30,4 @@ class AppCoordinator: BaseCoordinator {
             withAnimation: true)
     }
     
-
 }
-

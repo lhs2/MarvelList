@@ -42,4 +42,3 @@ class BaseNavigationController: UINavigationController {
     }
 
 }
-

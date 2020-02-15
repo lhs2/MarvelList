@@ -12,6 +12,7 @@ import NVActivityIndicatorView
 class HomeLoadingTableViewCell: UITableViewCell {
 
     @IBOutlet weak var indicatorView: NVActivityIndicatorView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
